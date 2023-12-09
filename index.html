@@ -183,10 +183,9 @@
                         <h2>Upload Multiple File</h2>
                     </div>
                     <div class="modal-body">
-                        <form action="" onsubmit="handleUpload">
-                            <input multiple type="file" name="" id="">
-                            <button type="submit" id="upload-button" class="upload-button">Upload
-                                File</button>
+                        <form onsubmit="handleUpload(event)">
+                            <input multiple type="file" name="uploads" id="fileInput">
+                            <button type="submit" id="upload-button" class="upload-button">Upload File</button>
                         </form>
                     </div>
                     <div class="modal-footer">

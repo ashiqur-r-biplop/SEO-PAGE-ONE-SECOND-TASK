@@ -1,7 +1,7 @@
 const loadData = async (query) => {
   try {
     toggleSpinner(query, true);
-    const URL = `http://localhost:5000/card/${query}`;
+    const URL = `https://seo-page1-second-time-task-server.vercel.app/card/${query}`;
     const res = await fetch(URL);
     const data = await res.json();
     if (data[0]?.type == "incomplete") {
@@ -174,7 +174,8 @@ const modalBtn = document.getElementById("modal-btn");
 const closeBtn = document.getElementById("close");
 
 const handleModalOpen = (id) => {
-  handleUpload.bind(null, id);
+  const fileInput = document.getElementById("fileInput");
+  fileInput.dataset.clientId = id;
   modal.style.display = "block";
 };
 
@@ -189,8 +190,42 @@ const outsideClick = (e) => {
   }
 };
 window.addEventListener("click", outsideClick);
-const handleUpload = (e, id) => {
-  modal.style.display = "none";
+const handleUpload = async (event) => {
+  event.preventDefault();
+
+  const fileInput = document.getElementById("fileInput");
+  const clientId = fileInput.dataset.clientId;
+
+  const formData = new FormData();
+  const files = fileInput.files;
+  for (let i = 0; i < files.length; i++) {
+    formData.append("uploads", files[i]);
+  }
+
+  try {
+    const response = await fetch(
+      `https://seo-page1-second-time-task-server.vercel.app/upload/${clientId}`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
+
+    if (response.ok) {
+      console.log("Files uploaded successfully!");
+      // Optionally, you can close the modal or update the UI here
+      handleModalClose();
+      // Refresh the data after uploading files
+      await loadData("incomplete");
+      alert("upload Successfully");
+      fileInput.value = "";
+    } else {
+      alert("Something is wrong");
+      console.error("Failed to upload files");
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 // spinner
 const toggleSpinner = (type, isSpinner) => {
