@@ -14,8 +14,9 @@
     <title>SEO Page One Task</title>
 </head>
 
-<body>
+<body class="root">
     <div class="grid-layout">
+        <!-- incomplete -->
         <div class="per-single-column">
             <div class="per-singe-column-scrollbar">
                 <div class="colmun-body">
@@ -25,52 +26,24 @@
                             <div class="left-column-title-color-red"></div>
                             <h4>incomplete</h4>
                         </div>
-                        <h5 class="right-column-title">{incomplete.length}</h5>
+                        <h5 class="right-column-title" id="incomplete-length"></h5>
                     </div>
                     <!-- card  -->
-                    <div class="column-card">
-                        <div class="card-img-group">
-                            <div class="card-img">
-                                <img src="" alt="">
-                                <h2>Client Name</h2>
-                            </div>
-                            <div class="card-img">
-                                <img src="" alt="">
-                                <h2>Sadik istiak</h2>
-                            </div>
-                        </div>
-                        <div class="crad-description">
-                            <div class="description">
-                                <i class="fa-solid fa-database description-icon"></i>
-                                <p>Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit. Fuga dignissimos debitis </p>
-                            </div>
-                            <div class="half-in-card">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                                <p>1/2</p>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <div class="card-footer-man">12+</div>
-                            <div class="footer-comment">
-                                <i class="fa-regular fa-comment-dots"></i>
-                                <span>15</span>
-                            </div>
-                            <div class="footer-upload-file">
-                                <i class="fa-solid fa-link"></i>
-                                <span>25</span>
-                            </div>
-                            <div class="footer-date">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                <span>30-12-2022</span>
-                            </div>
+                    <div class="card-container">
+
+                    </div>
+                    <!-- spinner -->
+                    <div id="spinner"
+                        class="d-flex justify-content-center align-items-center spinner incomplete-spinner d-none"
+                        style="height: 90vh;">
+                        <div class="spinner-border text-black" role="status ">
+                            <span class="visually-hidden">Loading...</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- todo -->
         <div class="per-single-column">
             <div class="per-singe-column-scrollbar">
                 <div class="colmun-body">
@@ -79,12 +52,25 @@
                             <div class="left-column-title-color-sky"></div>
                             <h4>To Do</h4>
                         </div>
-                        <h5 class="right-column-title">{todo.length}</h5>
+                        <h5 class="right-column-title" id="todo-length"></h5>
                     </div>
-                    <Cards>{todo}</Cards>
+                    <!-- card  -->
+                    <div class="card-container">
+
+                    </div>
+                    <!-- spinner -->
+                    <div id="spinner"
+                        class="d-flex justify-content-center align-items-center d-none spinner todo-spinner"
+                        style="height: 90vh;">
+                        <div class="spinner-border text-black" role="status ">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+        <!-- Doing -->
         <div class="per-single-column">
             <div class="per-singe-column-scrollbar">
                 <div class="colmun-body">
@@ -93,12 +79,24 @@
                             <div class="left-column-title-color-yellow"></div>
                             <h4>Doing</h4>
                         </div>
-                        <h5 class="right-column-title">{doing.length}</h5>
+                        <h5 class="right-column-title" id="doing-length"></h5>
                     </div>
-                    <Cards>{doing}</Cards>
+                    <!-- card  -->
+                    <div class="card-container">
+
+                    </div>
+                    <!-- spinner -->
+                    <div id="spinner"
+                        class="d-flex justify-content-center doing-spinner align-items-center d-none spinner"
+                        style="height: 90vh;">
+                        <div class="spinner-border text-black" role="status ">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- review -->
         <div class="per-single-column">
             <div class="per-singe-column-scrollbar">
                 <div class="colmun-body">
@@ -107,12 +105,24 @@
                             <div class=""></div>
                             <h4>Under Review</h4>
                         </div>
-                        <h5 class="right-column-title">{review.length}</h5>
+                        <h5 class="right-column-title" id="Review-length"></h5>
                     </div>
-                    <Cards>{review}</Cards>
+                    <!-- card  -->
+                    <div class="card-container">
+
+                    </div>
+                    <!-- spinner -->
+                    <div id="spinner"
+                        class="d-flex justify-content-center Review-spinner align-items-center d-none spinner"
+                        style="height: 90vh;">
+                        <div class="spinner-border text-black" role="status ">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- completed -->
         <div class="per-single-column">
             <div class="per-singe-column-scrollbar">
                 <div class="colmun-body">
@@ -121,12 +131,24 @@
                             <div class=""></div>
                             <h4>Completed</h4>
                         </div>
-                        <h5 class="right-column-title">{completed.length}</h5>
+                        <h5 class="right-column-title" id="completed-length"></h5>
                     </div>
-                    <Cards>{completed}</Cards>
+                    <!-- card  -->
+                    <div class="card-container">
+
+                    </div>
+                    <!-- spinner -->
+                    <div id="spinner"
+                        class="d-flex completed-spinner justify-content-center align-items-center d-none spinner"
+                        style="height: 90vh;">
+                        <div class="spinner-border text-black" role="status ">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- overd -->
         <div class="per-single-column">
             <div class="per-singe-column-scrollbar">
                 <div class="colmun-body">
@@ -135,9 +157,41 @@
                             <div class=""></div>
                             <h4>overd</h4>
                         </div>
-                        <h5 class="right-column-title">{overd.length}</h5>
+                        <h5 class="right-column-title" id="overd-length"></h5>
                     </div>
-                    <Cards>{overd}</Cards>
+                    <!-- card  -->
+                    <div class="card-container">
+
+                    </div>
+                    <!-- spinner -->
+                    <div id="spinner"
+                        class="d-flex overd-spinner justify-content-center align-items-center d-none spinner"
+                        style="height: 90vh;">
+                        <div class="spinner-border text-black" role="status ">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start modal -->
+        <div class="modal-container">
+            <div id="my-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="close" onclick="handleModalClose()">&times;</span>
+                        <h2>Upload Multiple File</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" onsubmit="handleUpload">
+                            <input multiple type="file" name="" id="">
+                            <button type="submit" id="upload-button" class="upload-button">Upload
+                                File</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,6 +200,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <!-- moment js CDN -->
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <!-- custom js CDN-->
+
+    <script src="./app.js"></script>
 
 </body>
 
