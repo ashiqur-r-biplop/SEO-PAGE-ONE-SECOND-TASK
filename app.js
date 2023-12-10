@@ -1,7 +1,7 @@
 const loadData = async (query) => {
   try {
     toggleSpinner(query, true);
-    const URL = `https://seo-page1-second-time-task-server.vercel.app/card/${query}`;
+    const URL = `https://seo-page-one-second-task-server.onrender.com/card/${query}`;
     const res = await fetch(URL);
     const data = await res.json();
     if (data[0]?.type == "incomplete") {
@@ -204,7 +204,7 @@ const handleUpload = async (event) => {
 
   try {
     const response = await fetch(
-      `https://seo-page1-second-time-task-server.vercel.app/upload/${clientId}`,
+      `https://seo-page-one-second-task-server.onrender.com/upload/${clientId}`,
       {
         method: "POST",
         body: formData,
